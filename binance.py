@@ -9,8 +9,9 @@ api = Api(app)
 class Binance(Resource):
      def get(self): 
         url = "https://api.binance.com/api/v3/ticker/price"; 
-        test = rq.get(url).text
-        return test;
+        test = rq.get(url)
+        json = test.json()
+        return json;
      
 #endpoint
 api.add_resource(Binance, '/binance')  
