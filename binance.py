@@ -10,9 +10,7 @@ class Binance(Resource):
      def get(self): 
         url = "https://api.binance.com/api/v3/ticker/price"; 
         test = rq.get(url).text
-        response = jsonify(test)
-        response.status_code = 200 # or 400 or whatever
-        return response
+        return test;
      
 #endpoint
 api.add_resource(Binance, '/binance')  
